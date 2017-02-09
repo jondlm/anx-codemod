@@ -34,7 +34,7 @@ To
 
 ```
 import DataTablePanel from 'anx-react/DataTablePanel';
-import Button from 'anx-react/lucid/DataTablePanel';
+import Button from 'anx-react/lucid/Button';
 import Bert from 'anx-react/volatile/Bert';
 ```
 
@@ -43,13 +43,13 @@ import Bert from 'anx-react/volatile/Bert';
 Updates all ES6 module imports from `lucid-ui` into path imports.
 
 ```
-import { Button } from 'lucid';
+import { Button } from 'lucid-ui';
 ```
 
 To
 
 ```
-import Button from 'lucid-ui/DataTablePanel';
+import Button from 'lucid-ui/Button';
 ```
 
 [jscodeshift]: https://github.com/facebook/jscodeshift
