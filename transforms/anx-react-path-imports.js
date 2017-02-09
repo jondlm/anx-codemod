@@ -84,14 +84,14 @@ module.exports = function transformer(file, api) {
 				const local = path.node.local.name;
 
 				if (imported === 'lucid') {
-					modifyAllVariables(importPath, local, 'lucid');
+					return modifyAllVariables(importPath, local, 'lucid');
 				}
 
 				if (imported === 'volatile') {
-					modifyAllVariables(importPath, local, 'volatile');
+					return modifyAllVariables(importPath, local, 'volatile');
 				}
 
-				injectAnxReactImport(importPath, local);
+				injectAnxReactImport(importPath, local, imported);
 			});
 
 			j(importPath).replaceWith();
