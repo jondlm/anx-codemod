@@ -1,3 +1,4 @@
+/* @flow */
 import {
   Lucid01,
   Lucid02 as Lucid02Local,

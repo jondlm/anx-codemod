@@ -1,3 +1,4 @@
+/* @flow */
 import Lucid03 from 'lucid-ui/Lucid03';
 import Lucid02Local from 'lucid-ui/Lucid02';
 import Lucid01 from 'lucid-ui/Lucid01';

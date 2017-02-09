@@ -1,3 +1,4 @@
+/* @flow */
 import {
 	AnxReact01,
 	AnxReact02 as AnxReact02Local,
@@ -6,6 +7,8 @@ import {
 } from 'anx-react';
 
 import * as anxReact from 'anx-react';
+
+import anxReactDefault from 'anx-react';
 
 const {
 	AnxReact03,
@@ -18,6 +21,18 @@ const {
 } = anxReact;
 const AnxReact09 = anxReact.AnxReact09;
 const AnxReact10Local = anxReact.AnxReact10;
+
+const {
+	AnxReact11,
+	AnxReact12: AnxReact12Local,
+	AnxReact13,
+	AnxReact13: {
+		AnxReact14,
+		AnxReact15: AnxReact15Local,
+	},
+} = anxReactDefault;
+const AnxReact16 = anxReactDefault.AnxReact16;
+const AnxReact17Local = anxReactDefault.AnxReact17;
 
 const {
 	Volatile01,

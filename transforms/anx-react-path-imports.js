@@ -1,6 +1,11 @@
 module.exports = function transformer(file, api) {
 	const j = api.jscodeshift;
 	const source = j(file.source);
+	const getFirstNode = () => source.find(j.Program).get('body', 0).node;
+
+  // Save the comments attached to the first node
+	const firstNode = getFirstNode();
+	const { comments } = firstNode;
 
 	const injectAnxReactImport = (pathToInjectAfter, local, imported, extra) => {
 		const inject = extra ? `/${extra}` : '';
@@ -64,7 +69,7 @@ module.exports = function transformer(file, api) {
 			});
 	};
 
-	return source
+	source
 		.find(j.ImportDeclaration)
 		.filter((importPath) => importPath.node.source.value === 'anx-react')
 		.forEach((importPath) => {
@@ -75,7 +80,16 @@ module.exports = function transformer(file, api) {
 
 				modifyAllVariables(importPath, local);
 
-				j(defaultPath.parent).remove(); // get rid of the * import
+				j(defaultPath.parent).replaceWith(); // get rid of the * import
+			});
+
+			// import anxReact from 'anx-react';
+			j(importPath).find(j.ImportDefaultSpecifier).forEach((defaultPath) => {
+				const local = defaultPath.node.local.name;
+
+				modifyAllVariables(importPath, local);
+
+				j(defaultPath.parent).replaceWith(); // get rid of the * import
 			});
 
 			// import { ... } from 'anx-react';
@@ -95,9 +109,16 @@ module.exports = function transformer(file, api) {
 			});
 
 			j(importPath).replaceWith();
-		})
-		.toSource({
-			quote: 'single',
-			useTabs: true,
 		});
+
+	// If the first node has been modified or deleted, reattach the comments
+	const firstNode2 = getFirstNode();
+	if (firstNode2 !== firstNode) {
+		firstNode2.comments = comments;
+	}
+
+	return source.toSource({
+		quote: 'single',
+		useTabs: true,
+	});
 };
