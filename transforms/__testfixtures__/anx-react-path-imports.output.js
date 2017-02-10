@@ -19,6 +19,11 @@ import AnxReact04Local from 'anx-react/AnxReact04';
 import AnxReact03 from 'anx-react/AnxReact03';
 import AnxReact17Local from 'anx-react/AnxReact17';
 import AnxReact16 from 'anx-react/AnxReact16';
+import Volatile09Local from 'anx-react/volatile/Volatile09';
+import Volatile08 from 'anx-react/volatile/Volatile08';
+import Lucid11 from 'anx-react/lucid/Lucid11';
+import Lucid09Local from 'anx-react/lucid/Lucid09';
+import Lucid08 from 'anx-react/lucid/Lucid08';
 import AnxReact13 from 'anx-react/AnxReact13';
 import AnxReact12Local from 'anx-react/AnxReact12';
 import AnxReact11 from 'anx-react/AnxReact11';
@@ -32,6 +37,13 @@ const {
 	AnxReact14,
 	AnxReact15: AnxReact15Local,
 } = AnxReact13;
+
+const {
+	Lucid12,
+} = Lucid11;
+
+const Lucid10 = anxReactDefault.lucid.Lucid10; // TODO: handle this case
+const Volatile10 = anxReactDefault.volatile.Lucid10; // TODO: handle this case
 
 const {
 	Volatile04,

@@ -30,9 +30,23 @@ const {
 		AnxReact14,
 		AnxReact15: AnxReact15Local,
 	},
+	lucid: {
+		Lucid08,
+		Lucid09: Lucid09Local,
+		Lucid11,
+		Lucid11: {
+			Lucid12,
+		},
+	},
+	volatile: {
+		Volatile08,
+		Volatile09: Volatile09Local,
+	},
 } = anxReactDefault;
 const AnxReact16 = anxReactDefault.AnxReact16;
 const AnxReact17Local = anxReactDefault.AnxReact17;
+const Lucid10 = anxReactDefault.lucid.Lucid10; // TODO: handle this case
+const Volatile10 = anxReactDefault.volatile.Lucid10; // TODO: handle this case
 
 const {
 	Volatile01,
