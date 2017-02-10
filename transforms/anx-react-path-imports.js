@@ -90,7 +90,7 @@ module.exports = function transformer(file, api) {
 		// TODO: this doesn't account for `const qux = foo.bar.baz` which is a MemberExpression
 		source
 			.find(j.VariableDeclarator)
-			.filter((path) => path.node && path.node.init.object && path.node.init.object.name  === topLocal)
+			.filter((path) => path.node && path.node.init && path.node.init.object && path.node.init.object.name  === topLocal)
 			.forEach((path) => {
 				const local = path.node.id.name;
 				const imported = path.node.init.property.name;
