@@ -43,12 +43,13 @@ module.exports = function transformer(file, api) {
 					.forEach((variablePath) => {
 						j(variablePath.node.id.properties).forEach((propertyPath) => {
 							if (propertyPath.node.value.type === 'ObjectPattern') {
-								const local = propertyPath.node.key.name;
+								const local = propertyPath.node.key.name + 'Internal'; // kinda hack way to handle the logger.logger edge case
 								const imported = propertyPath.node.key.name;
 								const objectPattern = propertyPath.node.value;
+
 								j(variablePath.parent).insertBefore(
 									j.variableDeclaration('const', [
-										j.variableDeclarator(objectPattern, j.identifier(imported)),
+										j.variableDeclarator(objectPattern, j.identifier(local)),
 									])
 								);
 
