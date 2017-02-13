@@ -8,8 +8,8 @@ A collection of [jscodeshift] scripts.
 - `git clone git@github.com:reactjs/react-codemod.git`
 - Run `npm install` or [`yarn`](yarn) in the react-codemod directory
 - `jscodeshift -t <codemod-script> <path>`
-- Use the `-d` option for a dry-run and use `-p` to print the output for
-  comparison
+- Use the `--extensions js,jsx ` option if you use JSX, `-d` for a dry-run,
+  `-p` to print the output for comparison
 
 ## Included Scripts
 
