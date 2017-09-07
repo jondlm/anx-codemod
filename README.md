@@ -6,7 +6,7 @@ A collection of [jscodeshift] scripts.
 
 - `npm install -g jscodeshift`
 - `git clone git@github.com:jondlm/anx-codemod.git`
-- Run `npm install` or [`yarn`](yarn) in the react-codemod directory
+- Run `npm install` or [`yarn`](yarn) in the anx-codemod directory
 - `jscodeshift -t <codemod-script> <path>`
 - Use the `--extensions js,jsx ` option if you use JSX, `-d` for a dry-run,
   `-p` to print the output for comparison
